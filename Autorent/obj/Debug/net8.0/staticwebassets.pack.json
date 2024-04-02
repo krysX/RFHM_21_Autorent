@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Erik\\Desktop\\c#\\Autorent\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Autorent.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Autorent.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Autorent.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Autorent.props",
+      "PackagePath": "build\\Autorent.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Autorent.props",
+      "PackagePath": "buildMultiTargeting\\Autorent.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Autorent.props",
+      "PackagePath": "buildTransitive\\Autorent.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
