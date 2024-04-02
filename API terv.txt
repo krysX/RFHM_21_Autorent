@@ -1,0 +1,13 @@
+GET /car - kilistázza az összes autót
+GET /car/category - kilistázza a kategóriákat
+GET /car/category/{catID} - kilistázza az adott kategóriába tartozó autókat
+GET /car/rentInfo/{carID} - kilistázza az autó kölcsönzési adatait
+
+GET /user/login - belépés
+GET /user/logout - kilépés
+GET /user/rental - kilistázza a korábbi kölcsönzéseket
+GET /user/rental/{rentalID} - visszaadja egy kölcsönzés adatait
+POST /user/rental - kikölcsönöz egy autót
+
+GET /sales
+
