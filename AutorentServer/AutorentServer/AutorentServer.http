@@ -1,6 +1,0 @@
-@AutorentServer_HostAddress = http://localhost:5110
-
-GET {{AutorentServer_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
