@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AutorentServer.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("cars/")]
 public class CarController : ControllerBase
 {
     private readonly ILogger<CarController> _logger;
@@ -15,8 +15,8 @@ public class CarController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("")]
-    public IEnumerable<Car> GetCar()
+    [HttpGet]
+    public IEnumerable<Car> GetCars()
     {
         return DbSimulation.Cars;
     }
@@ -28,18 +28,16 @@ public class CarController : ControllerBase
         return null == result ? NotFound() : Ok(result);
     }
 
-    [HttpGet("Category")]
+    [HttpGet("categories")]
     public IEnumerable<CarCategory> GetCategories()
     {
         return DbSimulation.Categories;
     }
-
-    [HttpGet("Category/{id}")]
+    
+    [HttpGet("categories/{id}")]
     public IActionResult GetCategory(int id)
     {
         var result = DbSimulation.Categories.Find(cat => cat.Id == id);
         return null == result ? NotFound() : Ok(result);
     }
-    
-    
 }

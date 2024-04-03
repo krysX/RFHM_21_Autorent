@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutorentServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83316dbd50ea6d2d6c4dc44669dd2b01f906b628")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21e5096a026501c796dd737e14337847ede87344")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutorentServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutorentServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
