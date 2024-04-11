@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AutorentServer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AutorentServer.props",
+      "PackagePath": "build\\AutorentServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AutorentServer.props",
+      "PackagePath": "buildMultiTargeting\\AutorentServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AutorentServer.props",
+      "PackagePath": "buildTransitive\\AutorentServer.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

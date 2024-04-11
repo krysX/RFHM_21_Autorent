@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XAwkoty9epEYysFsiGmCf7Vp7PSe/IEFdoxIBxOz2n20sjl2xxRbQ1pJpy85uaSdhdKCjkMrFmis5xlGITkprg==",
+  "dgSpecHash": "wr5EdssOYe8FCxFQHAHe0IyUzgY66eYDkWdY+1yvyjXGUPvjvHYvH+qD4iNkQjueQ2vo9ADf4tSAV7jJXlhkwA==",
   "success": true,
-  "projectFilePath": "C:\\VS Projects\\AutorentServer\\AutorentServer\\AutorentServer.csproj",
+  "projectFilePath": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\AutorentServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sipik\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\sipik\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
