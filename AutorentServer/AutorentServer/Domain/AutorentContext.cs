@@ -22,6 +22,12 @@ public class AutorentContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Car>().Property(c => c.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<CarCategory>().Property(c => c.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Sale>().Property(s => s.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Rental>().Property(r => r.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<User>().Property(u => u.Id).ValueGeneratedOnAdd();
+
         modelBuilder.Entity<Car>().HasData(
             new Car { Id = 1, CategoryId = 1, Brand = "Toyota", Model = "RAV4", DailyPrice = 20000 },
             new Car { Id = 2, CategoryId = 2, Brand = "Honda", Model = "Accord", DailyPrice = 16000 },
@@ -42,7 +48,7 @@ public class AutorentContext : DbContext
             new Sale { Id = 2, CarId = 2, Description = "Spring Sale", Percent = 15 },
             new Sale { Id = 3, CarId = 4, Description = "Holiday Special", Percent = 20 }
         );
-
+        
         modelBuilder.Entity<Rental>().HasData(
             new Rental
             {
@@ -62,8 +68,8 @@ public class AutorentContext : DbContext
         );
 
         modelBuilder.Entity<User>().HasData(
-            new User {Id = 1, Name = "Administrator", Username = "admin", Password = "admin"},
-            new User {Id = 2, Name = "User", Username = "user", Password = "user"}
+            new User { Id = 1, Name = "Administrator", Username = "admin", Password = "admin" },
+            new User { Id = 2, Name = "User", Username = "user", Password = "user" }
         );
     }
     

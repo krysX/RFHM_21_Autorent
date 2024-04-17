@@ -1,29 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj": {}
+    "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\AutorentServer.csproj": {}
   },
   "projects": {
-    "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj": {
+    "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\AutorentServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
+        "projectUniqueName": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\AutorentServer.csproj",
         "projectName": "AutorentServer",
-        "projectPath": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
-        "packagesPath": "/home/siposk/.nuget/packages/",
-        "outputPath": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/",
+        "projectPath": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\AutorentServer.csproj",
+        "packagesPath": "C:\\Users\\sipik\\.nuget\\packages\\",
+        "outputPath": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/home/siposk/.local/share/godot/mono/GodotNuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "/home/siposk/.nuget/NuGet/NuGet.Config",
-          "/home/siposk/.nuget/NuGet/config/Godot.Offline.Config"
+          "C:\\Users\\sipik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,12 +76,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.2, 8.0.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -88,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

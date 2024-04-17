@@ -40,4 +40,37 @@ public class UserController : ControllerBase
         var result = _repository.User.FindByCondition(usr => usr.Id == id);
         return null == result ? NotFound() : Ok(result);
     }
+
+    [HttpGet("{userId}/rentals/")]
+    public IActionResult GetRentalHistory(int userId)
+    {
+        var result = _repository.Rental.FindByCondition(rent => rent.UserId == userId);
+        return null == result ? NotFound() : Ok(result); 
+    }
+    
+    [HttpGet("{userId}/rentals/{rentalId}")]
+    public IActionResult GetRental(int userId, int rentalId)
+    {
+        var result = _repository.Rental.FindByCondition
+            (rent => rent.UserId == userId && rent.Id == rentalId);
+        return null == result ? NotFound() : Ok(result); 
+    }
+
+    [HttpPost("{userId}/rentals/")]
+    public IActionResult RentCar(int userId, int carId, string from, string to)
+    {
+        Rental r = new Rental
+        {
+            Id = _repository.Rental.FindAll().OrderBy(r => r.Id).LastOrDefault().Id + 1,
+            UserId = userId,
+            CarId = carId,
+            FromDate = DateOnly.Parse(from),
+            ToDate = DateOnly.Parse(to),
+            Created = DateTime.Now
+        };
+
+        _repository.Rental.Create(r);
+        _repository.Save();
+        return Ok();
+    }
 }
