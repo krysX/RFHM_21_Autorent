@@ -1,5 +1,6 @@
 using AutorentServer.Domain;
 using AutorentServer.Domain.Models;
+using AutorentServer.Domain.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +13,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-var db = new AutorentContext();
-db.Add(new Car { Id = 0, Brand = "kdfsjl", Model = "sjdflk", CategoryId = 1, DailyPrice = 9600 });
-db.SaveChanges();
+builder.Services.AddDbContext<AutorentContext>();
+builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+
+// db.Add(new Car { Id = 0, Brand = "kdfsjl", Model = "sjdflk", CategoryId = 1, DailyPrice = 9600 });
+// db.SaveChanges();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

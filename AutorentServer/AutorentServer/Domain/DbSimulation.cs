@@ -7,7 +7,7 @@ public static class DbSimulation
     public static List<User> Users = new List<User>
     {
         new User {Id = 0, Name = "Administrator", Username = "admin", Password = "admin"},
-        new User {Id = 1, Name = "User", Username = "user", Password = "user"},
+        new User {Id = 1, Name = "User", Username = "user", Password = "user"}
     };
 
     public static User? loggedIn;

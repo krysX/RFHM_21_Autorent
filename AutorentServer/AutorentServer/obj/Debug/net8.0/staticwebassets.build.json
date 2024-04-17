@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iUI+DeHkIL6aH1mrHCJwQlfqevGh03lMQ/M/mh4+EfQ=",
+  "Hash": "cYPq7Lr4CpflsbdXDPSVFCt0puxNv9i9fF4JQLD1Tzk=",
   "Source": "AutorentServer",
   "BasePath": "_content/AutorentServer",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "AutorentServer\\wwwroot",
+      "Name": "AutorentServer/wwwroot",
       "Source": "AutorentServer",
-      "ContentRoot": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
       "BasePath": "_content/AutorentServer",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\index.html",
+      "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/index.html",
       "SourceId": "AutorentServer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\VS Projects\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
       "BasePath": "_content/AutorentServer",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
+      "OriginalItemSpec": "wwwroot/index.html"
     }
   ]
 }
