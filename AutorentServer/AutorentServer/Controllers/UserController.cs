@@ -10,27 +10,18 @@ namespace AutorentServer.Controllers;
 public class UserController : ControllerBase
 {
     private readonly ILogger<UserController> _logger;
-    private readonly IUserRepository _user;
-    private readonly IRentalRepository _rental;
-    private readonly ISaleRepository _sale;
-    private readonly ICarRepository _car;
-    private readonly ICategoryRepository _category;
+    private readonly IRepositoryWrapper _repository;
 
-    public UserController(ILogger<UserController> logger, IUserRepository user, IRentalRepository rental, 
-            ISaleRepository sale, ICarRepository car, ICategoryRepository category)
+    public UserController(ILogger<UserController> logger, IRepositoryWrapper repository)
     {
         _logger = logger;
-        _user = user;
-        _rental = rental;
-        _sale = sale;
-        _car = car;
-        _category = category;
+        _repository = repository;
     }
     
     [HttpGet]
     public IActionResult GetAllUsers()
     {
-        var result = _user.FindAll();
+        var result = _repository.User.FindAll();
         return null == result ? NotFound() : Ok(result);
     }
     
@@ -38,7 +29,7 @@ public class UserController : ControllerBase
     [HttpGet("login")]
     public IActionResult Login(string username, string password)
     {
-        var result = _user.FindByCondition(usr => usr.Username == username && usr.Password == password);
+        var result = _repository.User.FindByCondition(usr => usr.Username == username && usr.Password == password);
         
         return null == result ? Unauthorized() : Ok(result);
     }
@@ -46,7 +37,7 @@ public class UserController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<User> GetUserDataById(int id)
     {
-        var result = _user.FindByCondition(usr => usr.Id == id);
+        var result = _repository.User.FindByCondition(usr => usr.Id == id);
         return null == result ? NotFound() : Ok(result);
     }
 }

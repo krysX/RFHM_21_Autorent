@@ -11,10 +11,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
 builder.Services.AddDbContext<AutorentContext>();
 builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+
+var app = builder.Build();
 
 // db.Add(new Car { Id = 0, Brand = "kdfsjl", Model = "sjdflk", CategoryId = 1, DailyPrice = 9600 });
 // db.SaveChanges();

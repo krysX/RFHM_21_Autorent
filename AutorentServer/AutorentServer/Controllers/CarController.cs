@@ -11,41 +11,39 @@ namespace AutorentServer.Controllers;
 public class CarController : ControllerBase
 {
     private readonly ILogger<CarController> _logger;
-    private readonly ICarRepository _car;
-    private readonly ICategoryRepository _category;
+    private readonly IRepositoryWrapper _repository;
     
-    public CarController(ILogger<CarController> logger, ICarRepository car, ICategoryRepository category)
+    public CarController(ILogger<CarController> logger, IRepositoryWrapper repository)
     {
         _logger = logger;
-        _car = car;
-        _category = category;
+        _repository = repository;
     }
 
     [HttpGet]
     public IActionResult GetCars()
     {
-        var result = _car.FindAll();
+        var result = _repository.Car.FindAll();
         return null == result ? NotFound() : Ok(result);
     }
     
     [HttpGet("{id}")]
     public IActionResult GetCarById(int id)
     {
-        var result = _car.FindByCondition((Car car) => car.Id == id);
+        var result = _repository.Car.FindByCondition((Car car) => car.Id == id);
         return null == result ? NotFound() : Ok(result);
     }
 
     [HttpGet("categories")]
     public IActionResult GetCategories()
     {
-        var result = _category.FindAll();
+        var result = _repository.CarCategory.FindAll();
         return null == result ? NotFound() : Ok(result);
     }
     
     [HttpGet("categories/{id}")]
     public IActionResult GetCategory(int id)
     {
-        var result = _category.FindByCondition((CarCategory cat) => cat.Id == id);
+        var result = _repository.CarCategory.FindByCondition((CarCategory cat) => cat.Id == id);
         return null == result ? NotFound() : Ok(result);
     }
 }
