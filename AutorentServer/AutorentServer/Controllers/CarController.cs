@@ -1,4 +1,5 @@
-using AutorentServer.Models;
+using AutorentServer.Domain;
+using AutorentServer.Domain.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,9 +1,10 @@
-namespace AutorentServer.Models;
+namespace AutorentServer.Domain.Models;
 
 public class CarCategory
 {
     public int Id { get; set; }
     public string Name { get; set; }
+    public IList<Car> Cars { get; set; }
 }
 
 public class CarCategoryDto

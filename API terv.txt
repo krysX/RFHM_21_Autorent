@@ -5,8 +5,8 @@ GET /car/rentInfo/{carID} - kilistázza az autó kölcsönzési adatait
 
 GET /user/login - belépés
 GET /user/logout - kilépés
-GET /user/rental - kilistázza a korábbi kölcsönzéseket
-GET /user/rental/{rentalID} - visszaadja egy kölcsönzés adatait
+GET /user/{id}/rental - kilistázza a korábbi kölcsönzéseket
+GET /user/{id}/rental/{rentalID} - visszaadja egy kölcsönzés adatait
 POST /user/rental - kikölcsönöz egy autót
 
 GET /sales

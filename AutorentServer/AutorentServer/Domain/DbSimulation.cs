@@ -1,4 +1,6 @@
-namespace AutorentServer.Models;
+using AutorentServer.Domain.Models;
+
+namespace AutorentServer.Domain;
 
 public static class DbSimulation
 {

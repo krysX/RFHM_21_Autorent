@@ -1,4 +1,4 @@
-namespace AutorentServer.Models;
+namespace AutorentServer.Domain.Models;
 
 public class User
 {

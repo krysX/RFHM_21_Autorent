@@ -1,7 +1,7 @@
 # RFHM_21_Autorent
 A 21. csapat Rendszerfejlesztés feladata.
 
-Ez az első beadandó branch-e
+Ez az második beadandó branch-e
 A szerver az AutorentServer mappában található
 A kliens az AutorentServer\AutorentServer\wwwroot\index.html fájlban található.
 
