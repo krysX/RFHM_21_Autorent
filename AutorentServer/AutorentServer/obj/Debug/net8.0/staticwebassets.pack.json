@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/client.js",
+      "PackagePath": "staticwebassets/client.js"
+    },
+    {
       "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/old/index.html",
+      "PackagePath": "staticwebassets/old/index.html"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.AutorentServer.Microsoft.AspNetCore.StaticWebAssets.props",

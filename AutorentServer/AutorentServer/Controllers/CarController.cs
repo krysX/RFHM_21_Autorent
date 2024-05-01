@@ -1,4 +1,3 @@
-using AutorentServer.Domain;
 using AutorentServer.Domain.Models;
 using AutorentServer.Domain.Repository;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -8,35 +7,30 @@ using AutorentServer.Services;
 
 namespace AutorentServer.Controllers;
 
-[Authorize(Roles = "Admin,User")]
+[Authorize]
 [ApiController]
 [Route("cars/")]
 public class CarController : ControllerBase
 {
     private readonly ILogger<CarController> _logger;
     private readonly IRepositoryWrapper _repository;
-    private readonly IRentalService _rentalService;
+    private readonly ICarService _carService;
     
-    public CarController(ILogger<CarController> logger, IRepositoryWrapper repository, IRentalService rentalService)
+    public CarController(ILogger<CarController> logger, IRepositoryWrapper repository, ICarService carService)
     {
         _logger = logger;
         _repository = repository;
-        _rentalService = rentalService;
+        _carService = carService;
     }
 
     [HttpGet]
     public IActionResult GetCars()
     {
-        var cars = _repository.Car.FindAll();
+        var cars = _repository.Car.FindAll().ToList();
         List<CarDto> carDtos = new List<CarDto>();
         foreach (var car in cars)
         {
-            carDtos.Append(new CarDto { 
-                BrandAndModel = string.Concat(car.Brand, " ", car.Model), 
-                CategoryName = _repository.CarCategory.FindById(car.CategoryId).Name, 
-                DailyPrice = car.DailyPrice, 
-                IsAvailableForRent = _rentalService.IsAvailableForRent(car.Id)
-            });
+            carDtos.Append(_carService.GetCarDto(car));
         }
         return Ok(carDtos);
     }
@@ -44,21 +38,27 @@ public class CarController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetCarById(int id)
     {
-        var result = _repository.Car.FindByCondition((Car car) => car.Id == id);
-        return null == result ? NotFound() : Ok(result);
+        var result = _repository.Car.FindById(id);
+        return null == result ? NotFound() : Ok(_carService.GetCarDto(result));
     }
 
     [HttpGet("categories")]
     public IActionResult GetCategories()
     {
         var result = _repository.CarCategory.FindAll();
-        return null == result ? NotFound() : Ok(result);
+        List<CarCategoryDto> categoryDtos = new List<CarCategoryDto>();
+        foreach (var cat in result)
+        {
+            categoryDtos.Append(_carService.GetCategoryDto(cat));
+        }
+
+        return null == result ? NotFound() : Ok(categoryDtos);
     }
     
     [HttpGet("categories/{id}")]
     public IActionResult GetCategory(int id)
     {
-        var result = _repository.CarCategory.FindByCondition((CarCategory cat) => cat.Id == id);
-        return null == result ? NotFound() : Ok(result);
+        var result = _repository.CarCategory.FindByCondition((CarCategory cat) => cat.Id == id)?.ToArray()[0];
+        return null == result ? NotFound() : Ok(_carService.GetCategoryDetailDto(result));
     }
 }

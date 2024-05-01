@@ -11,6 +11,7 @@ public interface IAuthService
 {
     public bool CheckForLogin(User user, string username, string password);
     public string GetHash(string password);
+    public string GenerateJwtToken(string username);
 }
 
 
@@ -44,13 +45,17 @@ public class AuthService : IAuthService
     public string GenerateJwtToken(string username)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes("eztNemFejtiMegSenki");
+        var key = Encoding.ASCII.GetBytes("eztNemFejtiMegSenki_amugyDeMertBarkiLathatja");
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                new Claim(ClaimTypes.Name, username)
+                new Claim(ClaimTypes.Name, username),
+                new Claim(ClaimTypes.Role, username == "admin" ? "Admin" : "User")
             }),
+            Issuer = "Team21_AutorentServer",
+            Audience = "Team21_AutorentClient",
+            IssuedAt = DateTime.UtcNow,
             Expires = DateTime.UtcNow.AddHours(1),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };

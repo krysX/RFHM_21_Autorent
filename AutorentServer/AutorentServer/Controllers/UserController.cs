@@ -5,11 +5,14 @@ using AutorentServer.Domain;
 using AutorentServer.Domain.Models;
 using AutorentServer.Domain.Repository;
 using AutorentServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AutorentServer.Controllers;
+
+[Authorize]
 [ApiController]
 [Route("users/")]
 public class UserController : ControllerBase
@@ -25,6 +28,7 @@ public class UserController : ControllerBase
         _auth = auth;
     }
     
+    [Authorize(Roles = "Admin")]
     [HttpGet]
     public IActionResult GetAllUsers()
     {
@@ -32,7 +36,7 @@ public class UserController : ControllerBase
         return null == result ? NotFound() : Ok(result);
     }
     
-    // nagyon kókány authentikáció
+    [AllowAnonymous]
     [HttpGet("login")]
     public IActionResult Login(string username, string password)
     {
@@ -41,25 +45,12 @@ public class UserController : ControllerBase
             return Unauthorized();
 
         bool passwordMatch = _auth.CheckForLogin(usr, username, password);
-        
-        // I am not sure about this part
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes("yourSecretKey");
-        var tokenDescriptor = new SecurityTokenDescriptor
-        {
-            Subject = new ClaimsIdentity(new Claim[]
-            {
-                new Claim(ClaimTypes.Name, "username"),
-                // Add more claims as needed
-            }),
-            Expires = DateTime.UtcNow.AddHours(1), // Token expiration time
-            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-        };
-        var token = tokenHandler.CreateToken(tokenDescriptor);
-        var tokenString = tokenHandler.WriteToken(token);
-        // end of unsure part
-        
-        return !passwordMatch ? Unauthorized() : Ok("Login successful");
+
+        if (!passwordMatch)
+            return Unauthorized();
+
+        string tokenStr = _auth.GenerateJwtToken(usr.Username);
+        return Ok(tokenStr);
     }
 
     [HttpGet("{id}")]
@@ -87,6 +78,12 @@ public class UserController : ControllerBase
     [HttpPost("{userId}/rentals/")]
     public IActionResult RentCar(int userId, int carId, string from, string to)
     {
+        string uname = User.Identity.Name.ToString();
+        bool auth = User.Identity.IsAuthenticated && _repository.User.FindById(userId).Name == uname;
+
+        if (!auth)
+            return Unauthorized();
+        
         Rental r = new Rental
         {
             Id = _repository.Rental.FindAll().OrderBy(r => r.Id).LastOrDefault().Id + 1,

@@ -26,14 +26,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = "Team21_AutorentServer",
             ValidAudience = "Team21_AutorentClient",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("eztNemFejtiMegSenki"))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("eztNemFejtiMegSenki_amugyDeMertBarkiLathatja"))
         };
     });
 
 builder.Services.AddDbContext<AutorentContext>();
 builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IRentalService, RentalService>();
+builder.Services.AddScoped<ICarService, CarService>();
 
 var app = builder.Build();
 
