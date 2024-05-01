@@ -1,10 +1,14 @@
+using System.Security.Cryptography;
 using AutorentServer.Domain.Models;
+using AutorentServer.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace AutorentServer.Domain;
 
 public class AutorentContext : DbContext
 {
+    private readonly IAuthService _auth;
+    
     public DbSet<Car> Cars { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<CarCategory> Categories { get; set; }
@@ -13,8 +17,10 @@ public class AutorentContext : DbContext
     
     public string DbPath { get; }
 
-    public AutorentContext()
+    public AutorentContext(IAuthService auth)
     {
+        _auth = auth;
+        
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
         DbPath = Path.Join(path, "autorent.db");
@@ -22,6 +28,12 @@ public class AutorentContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Car>().HasKey(c => c.Id);
+        modelBuilder.Entity<CarCategory>().HasKey(c => c.Id);
+        modelBuilder.Entity<Sale>().HasKey(s => s.Id);
+        modelBuilder.Entity<Rental>().HasKey(r => r.Id);
+        modelBuilder.Entity<User>().HasKey(u => u.Id);
+        
         modelBuilder.Entity<Car>().Property(c => c.Id).ValueGeneratedOnAdd();
         modelBuilder.Entity<CarCategory>().Property(c => c.Id).ValueGeneratedOnAdd();
         modelBuilder.Entity<Sale>().Property(s => s.Id).ValueGeneratedOnAdd();
@@ -29,7 +41,7 @@ public class AutorentContext : DbContext
         modelBuilder.Entity<User>().Property(u => u.Id).ValueGeneratedOnAdd();
 
         modelBuilder.Entity<Car>().HasData(
-            new Car { Id = 1, CategoryId = 1, Brand = "Toyota", Model = "RAV4", DailyPrice = 20000 },
+            new Car { Id = 1, Brand = "Toyota", Model = "RAV4", DailyPrice = 20000 },
             new Car { Id = 2, CategoryId = 2, Brand = "Honda", Model = "Accord", DailyPrice = 16000 },
             new Car { Id = 3, CategoryId = 3, Brand = "Ford", Model = "Focus", DailyPrice = 14000 },
             new Car { Id = 4, CategoryId = 1, Brand = "Jeep", Model = "Wrangler", DailyPrice = 24000 },
@@ -68,9 +80,10 @@ public class AutorentContext : DbContext
         );
 
         modelBuilder.Entity<User>().HasData(
-            new User { Id = 1, Name = "Administrator", Username = "admin", Password = "admin" },
-            new User { Id = 2, Name = "User", Username = "user", Password = "user" }
+            new User { Id = 1, Name = "Administrator", Username = "admin", PasswordHash = _auth.GetHash("admin") },
+            new User { Id = 2, Name = "User", Username = "user", PasswordHash = _auth.GetHash("user") }
         );
+        
     }
     
     protected override void OnConfiguring(DbContextOptionsBuilder options)

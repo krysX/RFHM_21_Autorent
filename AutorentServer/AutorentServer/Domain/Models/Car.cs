@@ -16,7 +16,7 @@ public class Car
 public class CarDto
 {
     public string BrandAndModel { get; set; }
-    public string Category { get; set; }
+    public string CategoryName { get; set; }
     public int DailyPrice { get; set; }
     public bool IsAvailableForRent { get; set; }
 }

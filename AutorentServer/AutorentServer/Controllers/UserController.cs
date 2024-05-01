@@ -1,8 +1,13 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using AutorentServer.Domain;
 using AutorentServer.Domain.Models;
 using AutorentServer.Domain.Repository;
+using AutorentServer.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AutorentServer.Controllers;
 [ApiController]
@@ -11,11 +16,13 @@ public class UserController : ControllerBase
 {
     private readonly ILogger<UserController> _logger;
     private readonly IRepositoryWrapper _repository;
+    private readonly IAuthService _auth;
 
-    public UserController(ILogger<UserController> logger, IRepositoryWrapper repository)
+    public UserController(ILogger<UserController> logger, IRepositoryWrapper repository, IAuthService auth)
     {
         _logger = logger;
         _repository = repository;
+        _auth = auth;
     }
     
     [HttpGet]
@@ -29,9 +36,30 @@ public class UserController : ControllerBase
     [HttpGet("login")]
     public IActionResult Login(string username, string password)
     {
-        var result = _repository.User.FindByCondition(usr => usr.Username == username && usr.Password == password);
+        User? usr = _repository.User.FindByUsername(username);
+        if (null == usr)
+            return Unauthorized();
+
+        bool passwordMatch = _auth.CheckForLogin(usr, username, password);
         
-        return null == result ? Unauthorized() : Ok(result);
+        // I am not sure about this part
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes("yourSecretKey");
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(new Claim[]
+            {
+                new Claim(ClaimTypes.Name, "username"),
+                // Add more claims as needed
+            }),
+            Expires = DateTime.UtcNow.AddHours(1), // Token expiration time
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        };
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        var tokenString = tokenHandler.WriteToken(token);
+        // end of unsure part
+        
+        return !passwordMatch ? Unauthorized() : Ok("Login successful");
     }
 
     [HttpGet("{id}")]
