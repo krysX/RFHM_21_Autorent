@@ -1,27 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Erik\\source\\repos\\krysX\\RFHM_21_Autorent\\AutorentServer\\AutorentServer.csproj": {}
+    "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Erik\\source\\repos\\krysX\\RFHM_21_Autorent\\AutorentServer\\AutorentServer.csproj": {
+    "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Erik\\source\\repos\\krysX\\RFHM_21_Autorent\\AutorentServer\\AutorentServer.csproj",
+        "projectUniqueName": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer.csproj",
         "projectName": "AutorentServer",
-        "projectPath": "C:\\Users\\Erik\\source\\repos\\krysX\\RFHM_21_Autorent\\AutorentServer\\AutorentServer.csproj",
-        "packagesPath": "C:\\Users\\Erik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Erik\\source\\repos\\krysX\\RFHM_21_Autorent\\AutorentServer\\obj\\",
+        "projectPath": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer.csproj",
+        "packagesPath": "/home/siposk/.nuget/packages/",
+        "outputPath": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/home/siposk/.local/share/godot/mono/GodotNuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Erik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/siposk/.nuget/NuGet/NuGet.Config",
+          "/home/siposk/.nuget/NuGet/config/Godot.Offline.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,11 +36,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -61,6 +58,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.2, 8.0.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -69,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

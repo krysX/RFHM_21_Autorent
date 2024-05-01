@@ -27,11 +27,7 @@ public class CarController : ControllerBase
     public IActionResult GetCars()
     {
         var cars = _repository.Car.FindAll().ToList();
-        List<CarDto> carDtos = new List<CarDto>();
-        foreach (var car in cars)
-        {
-            carDtos.Append(_carService.GetCarDto(car));
-        }
+        var carDtos = _carService.GetCarDtos(cars);
         return Ok(carDtos);
     }
     
@@ -45,20 +41,27 @@ public class CarController : ControllerBase
     [HttpGet("categories")]
     public IActionResult GetCategories()
     {
-        var result = _repository.CarCategory.FindAll();
-        List<CarCategoryDto> categoryDtos = new List<CarCategoryDto>();
-        foreach (var cat in result)
+        List<CarCategory> categories = _repository.CarCategory.FindAll().ToList();
+        if (categories.Count == 0)
         {
-            categoryDtos.Append(_carService.GetCategoryDto(cat));
+            return NotFound();
         }
+        var categoryDtos = _carService.GetCategoryDtos(categories);
 
-        return null == result ? NotFound() : Ok(categoryDtos);
+        return Ok(categoryDtos);
     }
     
     [HttpGet("categories/{id}")]
     public IActionResult GetCategory(int id)
     {
-        var result = _repository.CarCategory.FindByCondition((CarCategory cat) => cat.Id == id)?.ToArray()[0];
+        var result = _repository.CarCategory.FindById(id);
         return null == result ? NotFound() : Ok(_carService.GetCategoryDetailDto(result));
+    }
+
+    [HttpGet("sales/")]
+    public IActionResult GetSales()
+    {
+        var sales = _repository.Sale.FindAll().ToList();
+        return Ok(sales);
     }
 }

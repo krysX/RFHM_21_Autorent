@@ -7,14 +7,29 @@
     </head>
     <body>
         <script src="client.js"></script>
+        <!-- <div class="login-form" class="container mt-5">
+            <h2 class="mb-4">Login</h2>
+            <div id="login-form"> 
+                <label for="username" class="form-label">Felhasználónév</label>
+                <input type="text" class="form-control" id="username" name="username">
+                <label for="password" class="form-label">Jelszó</label>
+                <input type="password" class="form-control" id="password" name="password">
+                <input type="button" class="btn btn-primary" value="Login" onclick="login()">
+            </div>
+        </div> -->
         <div class="container mt-5">
-            <h2 class="mb-4">API végpont tesztelés</h2>
-            <p class="mb-4">Végpontok:</p>
+            <h2 class="mb-4">Autorent kliens - v0.2</h2>
 
             <button type="button" id="car" class="btn btn-primary" onclick="sendRequest('GET')">Cars</button>
+            <button type="button" id="cats" class="btn btn-primary" onclick="sendRequest('GET')">Categories</button>
+            <button type="button" id="cat01" class="btn btn-primary" onclick="sendRequest('GET')">SUVs</button>
+            <button type="button" id="cat02" class="btn btn-primary" onclick="sendRequest('GET')">Sedans</button>
+            <button type="button" id="cat03" class="btn btn-primary" onclick="sendRequest('GET')">Hatchbacks</button>
+            <button type="button" id="rentals01" class="btn btn-primary" onclick="sendRequest('GET')">Rentals for Admin</button>
+            <button type="button" id="rentals02" class="btn btn-primary" onclick="sendRequest('GET')">Rentals for User</button>
             <button type="button" id="user" class="btn btn-primary" onclick="sendRequest('GET')">Users</button>
             <div id="token-input" class="row mt-4">
-                <label for="token-input-box" class="form-label">API-tol kapott JWT token:</label>
+                <label for="token-input-box" class="form-label">API-tól kapott JWT token:</label>
                 <input type="text" class="form-control" id="token-input-box" onchange='updateToken()'>
             </div>
 

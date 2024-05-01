@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AutorentServer.Domain.Models;
 
 public class Car
@@ -9,6 +11,7 @@ public class Car
     public string Model { get; set; }
     public int DailyPrice { get; set; }
     
+    [ForeignKey(nameof(Category))]
     public int CategoryId { get; set; }
     public CarCategory Category { get; set; }
 }

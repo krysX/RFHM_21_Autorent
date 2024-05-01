@@ -56,6 +56,11 @@ public class UserController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<User> GetUserDataById(int id)
     {
+        string uname = User.Identity.Name.ToString();
+        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(id).Name == uname);
+        if (!auth)
+            return Unauthorized();
+        
         var result = _repository.User.FindByCondition(usr => usr.Id == id);
         return null == result ? NotFound() : Ok(result);
     }
@@ -63,6 +68,11 @@ public class UserController : ControllerBase
     [HttpGet("{userId}/rentals/")]
     public IActionResult GetRentalHistory(int userId)
     {
+        string uname = User.Identity.Name.ToString();
+        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(userId).Name == uname);
+        if (!auth)
+            return Unauthorized();
+        
         var result = _repository.Rental.FindByCondition(rent => rent.UserId == userId);
         return null == result ? NotFound() : Ok(result); 
     }
@@ -70,6 +80,11 @@ public class UserController : ControllerBase
     [HttpGet("{userId}/rentals/{rentalId}")]
     public IActionResult GetRental(int userId, int rentalId)
     {
+        string uname = User.Identity.Name.ToString();
+        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(userId).Name == uname);
+        if (!auth)
+            return Unauthorized();
+        
         var result = _repository.Rental.FindByCondition
             (rent => rent.UserId == userId && rent.Id == rentalId);
         return null == result ? NotFound() : Ok(result); 
@@ -79,8 +94,7 @@ public class UserController : ControllerBase
     public IActionResult RentCar(int userId, int carId, string from, string to)
     {
         string uname = User.Identity.Name.ToString();
-        bool auth = User.Identity.IsAuthenticated && _repository.User.FindById(userId).Name == uname;
-
+        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(userId).Name == uname);
         if (!auth)
             return Unauthorized();
         

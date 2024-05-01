@@ -6,9 +6,12 @@ namespace AutorentServer.Services;
 public interface ICarService
 {
     public CarDto GetCarDto(Car car);
+    public List<CarDto> GetCarDtos(IEnumerable<Car> cars);
     public CarCategoryDto GetCategoryDto(CarCategory cat);
+    public List<CarCategoryDto> GetCategoryDtos(IEnumerable<CarCategory> cats);
     public CarCategoryDetailDto GetCategoryDetailDto(CarCategory cat);
     public bool IsAvailableForRent(int carId);
+    
 }
 
 public class CarService : ICarService
@@ -32,6 +35,13 @@ public class CarService : ICarService
 
         return dto;
     }
+
+    public List<CarDto> GetCarDtos(IEnumerable<Car> cars)
+    {
+        List<CarDto> dtos = new List<CarDto>();
+        cars.ToList().ForEach(car => dtos.Add(GetCarDto(car)));
+        return dtos;
+    }
     
     public CarCategoryDto GetCategoryDto(CarCategory cat)
     {
@@ -44,21 +54,22 @@ public class CarService : ICarService
         return dto;
     }
 
+    public List<CarCategoryDto> GetCategoryDtos(IEnumerable<CarCategory> cats)
+    {
+        var dtos = new List<CarCategoryDto>();
+        cats.ToList().ForEach(cat => dtos.Add(GetCategoryDto(cat)));
+        return dtos;
+    }
+
     public CarCategoryDetailDto GetCategoryDetailDto(CarCategory cat)
     {
-        var cars = cat.Cars.ToList();
-        List<CarDto> carDtos = new List<CarDto>();
-
-        foreach (Car car in cars)
-        {
-            carDtos.Append(GetCarDto(car));
-        }
+        var cars = GetCarDtos(cat.Cars);
         
         var dto = new CarCategoryDetailDto()
         {
             Name = cat.Name,
             NoCars = cat.Cars.Count,
-            Cars = carDtos
+            Cars = cars
         };
 
         return dto;
@@ -68,7 +79,8 @@ public class CarService : ICarService
     {
         DateOnly now = DateOnly.FromDateTime(DateTime.Now);
         var isActual = (Rental r) => (r.FromDate <= now && r.ToDate >= now);
-        var rentsForCar = _repository.Rental.FindByCondition(r => isActual(r) && r.CarId == carId);
-        return null == rentsForCar;
+        var condition = (Rental r) => (isActual(r) && r.CarId == carId);
+        var isRented = _repository.Rental.FindAll().ToList().Exists(r => condition(r));
+        return !isRented;
     }
 }

@@ -17,5 +17,5 @@ public class CarCategoryDetailDto
 {
     public string Name { get; set; }
     public int NoCars { get; set; }
-    public List<CarDto> Cars { get; set; }
+    public IList<CarDto> Cars { get; set; }
 }

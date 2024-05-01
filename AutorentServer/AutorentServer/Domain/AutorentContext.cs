@@ -40,6 +40,10 @@ public class AutorentContext : DbContext
         modelBuilder.Entity<Rental>().Property(r => r.Id).ValueGeneratedOnAdd();
         modelBuilder.Entity<User>().Property(u => u.Id).ValueGeneratedOnAdd();
 
+        modelBuilder.Entity<CarCategory>().Navigation(c => c.Cars).
+            UsePropertyAccessMode(PropertyAccessMode.Property)
+            .AutoInclude();
+
         modelBuilder.Entity<Car>().HasData(
             new Car { Id = 1, CategoryId = 1, Brand = "Toyota", Model = "RAV4", DailyPrice = 20000 },
             new Car { Id = 2, CategoryId = 2, Brand = "Honda", Model = "Accord", DailyPrice = 16000 },
