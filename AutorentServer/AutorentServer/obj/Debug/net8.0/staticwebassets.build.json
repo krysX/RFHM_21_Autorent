@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NMMfnDRYEF0Lntxd0CvsX6fCHxx84KbGlxjL7noJqAY=",
+  "Hash": "49z9BSimGHC1mPhOM/IpOUUwaXTKNVeqYkP2lXmLxI4=",
   "Source": "AutorentServer",
   "BasePath": "_content/AutorentServer",
   "Mode": "Default",
@@ -53,25 +53,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
-    },
-    {
-      "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/old/index.html",
-      "SourceId": "AutorentServer",
-      "SourceType": "Discovered",
-      "ContentRoot": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
-      "BasePath": "_content/AutorentServer",
-      "RelativePath": "old/index.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/old/index.html"
     }
   ]
 }
