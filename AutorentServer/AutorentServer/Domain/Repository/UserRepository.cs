@@ -15,6 +15,7 @@ public class UserRepository : RepositoryBase<User>, IUserRepository
 
     public User? FindByUsername(string username)
     {
-        return _context.Users.Where(usr => usr.Username == username).ToArray()[0];
+        var found = _context.Users.Where(usr => usr.Username == username).ToArray();
+        return found.Length > 0 ? found[0] : null;
     }
 }
