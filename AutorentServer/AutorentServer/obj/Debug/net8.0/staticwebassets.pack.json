@@ -1,12 +1,20 @@
 {
   "Files": [
     {
+      "Id": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\client.html",
+      "PackagePath": "staticwebassets\\client.html"
+    },
+    {
       "Id": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\client.js",
       "PackagePath": "staticwebassets\\client.js"
     },
     {
       "Id": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\login.js",
+      "PackagePath": "staticwebassets\\login.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AutorentServer.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -27,7 +28,7 @@ public class UserController : ControllerBase
         _repository = repository;
         _auth = auth;
     }
-    
+
     [Authorize(Roles = "Admin")]
     [HttpGet]
     public IActionResult GetAllUsers()
@@ -35,7 +36,9 @@ public class UserController : ControllerBase
         var result = _repository.User.FindAll();
         return null == result ? NotFound() : Ok(result);
     }
-    
+
+    struct LoginResult { public string token; }
+
     [AllowAnonymous]
     [HttpGet("login")]
     public IActionResult Login(string username, string password)
@@ -49,8 +52,9 @@ public class UserController : ControllerBase
         if (!passwordMatch)
             return Unauthorized();
 
-        string tokenStr = _auth.GenerateJwtToken(usr.Username);
-        return Ok(tokenStr);
+        string token = _auth.GenerateJwtToken(usr.Username);
+        JsonResult jsonResult = new JsonResult(token); 
+        return Ok(jsonResult);
     }
 
     [HttpGet("{id}")]
@@ -65,7 +69,16 @@ public class UserController : ControllerBase
         return null == result ? NotFound() : Ok(result);
     }
 
-    [HttpGet("{userId}/rentals/")]
+    [HttpGet("me")]
+    public IActionResult GetCurrentUser()
+    {
+        string uname = User.Identity.Name.ToString();
+        User usr = _repository.User.FindByUsername(uname);
+        if (null == usr) return NotFound();
+        return new JsonResult(usr);
+    }
+
+    [HttpGet("{userId}/rentals")]
     public IActionResult GetRentalHistory(int userId)
     {
         string uname = User.Identity.Name.ToString();
@@ -90,7 +103,7 @@ public class UserController : ControllerBase
         return null == result ? NotFound() : Ok(result); 
     }
 
-    [HttpPost("{userId}/rentals/")]
+    [HttpPost("{userId}/rentals")]
     public IActionResult RentCar(int userId, int carId, string from, string to)
     {
         string uname = User.Identity.Name.ToString();

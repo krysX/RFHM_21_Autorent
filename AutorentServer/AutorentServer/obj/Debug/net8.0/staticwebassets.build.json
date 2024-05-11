@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JoAwXFEVYVtl9z0yguMRqWWP902g+9UfClQZP+7FhaQ=",
+  "Hash": "xP0uZ6zsIz+35qzhzxd7q6kn8m+pjD0LdsH3CH9ik3k=",
   "Source": "AutorentServer",
   "BasePath": "_content/AutorentServer",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\client.html",
+      "SourceId": "AutorentServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "BasePath": "_content/AutorentServer",
+      "RelativePath": "client.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\client.html"
+    },
     {
       "Identity": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\client.js",
       "SourceId": "AutorentServer",
@@ -53,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\login.js",
+      "SourceId": "AutorentServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "BasePath": "_content/AutorentServer",
+      "RelativePath": "login.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\login.js"
     }
   ]
 }

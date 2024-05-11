@@ -1,22 +1,35 @@
-var token = ""
+var token = "";
 
-function updateToken() {
-    var inputBox = document.getElementById("token-input-box");
-    token = inputBox.value;
+// function updateToken() {
+//     var inputBox = document.getElementById("token-input-box");
+//     token = inputBox.value;
+// }
+
+function init() {
+    token = localStorage.getItem('token');
+    document.getElementById('token-input-box').innerText = token;
+    getNameOfUser();
 }
 
-function login() {
-    var unameBox = document.getElementById("username");
-    var passBox = document.getElementById("password");
+function getNameOfUser() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/users/me', true);
+    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
 
-    const username = unameBox.value;
-    const password = passBox.value;
+    let name = undefined;
+
+    xhr.onload = function() {
+        if(xhr.status >= 200 && xhr.status < 300) {
+            const jsonData = JSON.parse(xhr.response);
+            document.getElementById('username-text').innerHTML = jsonData.name;
+            console.log(jsonData.name);
+        } 
+    }
     
-    const endpoint = "users/login"
-    const response = fetch(`/users/login?username=${username}&password=${password}`).then(res => console.log(res.body));
-    //const msg = response.json();
-    console.log(msg);
+    name = xhr.send();
 }
+
+
 
 function getEndpoint(method) {
     switch (method) {
