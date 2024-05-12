@@ -7,8 +7,8 @@ var token = "";
 
 function init() {
     token = localStorage.getItem('token');
-    document.getElementById('token-input-box').innerText = token;
     getNameOfUser();
+//    getCategories();
 }
 
 function getNameOfUser() {
@@ -16,22 +16,43 @@ function getNameOfUser() {
     xhr.open('GET', '/users/me', true);
     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
 
-    let name = undefined;
-
     xhr.onload = function() {
         if(xhr.status >= 200 && xhr.status < 300) {
-            const jsonData = JSON.parse(xhr.response);
-            document.getElementById('username-text').innerHTML = jsonData.name;
-            console.log(jsonData.name);
+            // const jsonData = JSON.parse(xhr.response);
+            document.getElementById('username-text').innerHTML = xhr.response;
+            //console.log(jsonData.name);
         } 
     }
     
-    name = xhr.send();
+    xhr.send();
 }
 
+// function getCategories() {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open('GET', '/cars/categories', true);
+//     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+
+//     let select = document.getElementByID('cats');
+
+//     xhr.onload = function() {
+//         let json = JSON.parse(xhr.response);
+//         console.log(jsonData);
+
+//         for (var i = 0; i<= json.length; i++){
+//             var opt = document.createElement('option');
+//             opt.value = `cat0${i}`;
+//             var str = `${json[i].name} (${json[i].noCars})`;
+//             opt.innerHTML = str;
+//             select.appendChild(opt);
+//         }
+//     }
+
+//     xhr.send();
+// }
 
 
-function getEndpoint(method) {
+
+function getEndpoint(method, endpoint) {
     switch (method) {
         case 'GET':
             var button = document.activeElement;
