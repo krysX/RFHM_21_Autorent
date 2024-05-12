@@ -1,7 +1,7 @@
 # RFHM_21_Autorent
 A 21. csapat Rendszerfejlesztés feladata.
 
-Ez a harmadik beadandó branch-e
+Ez a negyedik beadandó branch-e
 
 Szerver elérési útvonala: AutorentServer
 
