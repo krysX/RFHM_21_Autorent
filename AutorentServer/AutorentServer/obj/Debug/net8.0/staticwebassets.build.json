@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xP0uZ6zsIz+35qzhzxd7q6kn8m+pjD0LdsH3CH9ik3k=",
+  "Hash": "yaqQaHE7f6MJCPKpBl6Mb+S/jmxOxCyJWx0VLnf/jpg=",
   "Source": "AutorentServer",
   "BasePath": "_content/AutorentServer",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "AutorentServer\\wwwroot",
+      "Name": "AutorentServer/wwwroot",
       "Source": "AutorentServer",
-      "ContentRoot": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
       "BasePath": "_content/AutorentServer",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\client.html",
+      "Identity": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/client.html",
       "SourceId": "AutorentServer",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
       "BasePath": "_content/AutorentServer",
       "RelativePath": "client.html",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\client.html"
+      "OriginalItemSpec": "wwwroot/client.html"
     },
     {
-      "Identity": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\client.js",
+      "Identity": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/client.js",
       "SourceId": "AutorentServer",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
       "BasePath": "_content/AutorentServer",
       "RelativePath": "client.js",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\client.js"
+      "OriginalItemSpec": "wwwroot/client.js"
     },
     {
-      "Identity": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\index.html",
+      "Identity": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/index.html",
       "SourceId": "AutorentServer",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
       "BasePath": "_content/AutorentServer",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
+      "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\login.js",
+      "Identity": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/login.js",
       "SourceId": "AutorentServer",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\wwwroot\\",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
       "BasePath": "_content/AutorentServer",
       "RelativePath": "login.js",
       "AssetKind": "All",
@@ -90,7 +90,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\login.js"
+      "OriginalItemSpec": "wwwroot/login.js"
     }
   ]
 }

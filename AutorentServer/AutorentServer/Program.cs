@@ -4,6 +4,7 @@ using AutorentServer.Domain.Models;
 using AutorentServer.Domain.Repository;
 using AutorentServer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.WebSockets;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -54,6 +55,7 @@ app.UseHttpsRedirection();
 app.UseFileServer();
 
 app.UseAuthorization();
+app.UseWebSockets();
 
 app.MapControllers();
 

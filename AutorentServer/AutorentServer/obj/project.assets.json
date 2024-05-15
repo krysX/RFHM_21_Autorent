@@ -3673,34 +3673,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kristóf\\.nuget\\packages\\": {},
-    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "E:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/home/siposk/.nuget/packages/": {},
+    "/home/siposk/.local/share/godot/mono/GodotNuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\AutorentServer.csproj",
+      "projectUniqueName": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
       "projectName": "AutorentServer",
-      "projectPath": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\AutorentServer.csproj",
-      "packagesPath": "C:\\Users\\Kristóf\\.nuget\\packages\\",
-      "outputPath": "E:\\Egyetemi projektek\\05-11\\RFHM_21_Autorent\\AutorentServer\\AutorentServer\\obj\\",
+      "projectPath": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
+      "packagesPath": "/home/siposk/.nuget/packages/",
+      "outputPath": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "E:\\Microsoft\\Xamarin\\NuGet\\"
+        "/home/siposk/.local/share/godot/mono/GodotNuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Kristóf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/home/siposk/.nuget/NuGet/NuGet.Config",
+        "/home/siposk/.nuget/NuGet/config/Godot.Offline.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3759,6 +3754,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.2, 8.0.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3767,7 +3768,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

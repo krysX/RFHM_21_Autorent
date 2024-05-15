@@ -5,11 +5,30 @@ var token = "";
 //     token = inputBox.value;
 // }
 
+const ws = new WebSocket('/ws')
+
+ws.onopen = (event) => {
+    console.log('WS connection established.');
+}
+
+ws.onmessage = (event) => {
+    console.log(event.data);
+};
+
+ws.onclose = (event) => {
+    if(event.wasClean) {
+        console.log('WebSocket connection closed gracefully.');
+    } else {
+        console.error('RIP connection');
+    }
+};
+
 function init() {
     token = localStorage.getItem('token');
     getNameOfUser();
+
 //    getCategories();
-}
+};
 
 function getNameOfUser() {
     const xhr = new XMLHttpRequest();
@@ -18,8 +37,8 @@ function getNameOfUser() {
 
     xhr.onload = function() {
         if(xhr.status >= 200 && xhr.status < 300) {
-            // const jsonData = JSON.parse(xhr.response);
-            document.getElementById('username-text').innerHTML = xhr.response;
+            const jsonData = JSON.parse(xhr.response);
+            document.getElementById('username-text').innerHTML = jsonData.name;
             //console.log(jsonData.name);
         } 
     }
@@ -100,7 +119,7 @@ function sendRequest(method) {
         if(xhr.status >= 200 && xhr.status < 300)
             responseBox.value = xhr.response; 
         else if(xhr.status == 401)
-            responseBox.value = "Unauthorized";
+            responseBox.value = "Ehhez nincs hozzáférése.";
         else
             responseBox.value = "Hibakód: " + xhr.status;
     }
