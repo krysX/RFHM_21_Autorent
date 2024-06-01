@@ -6,6 +6,11 @@
         <title>Autorent kliens</title>
     </head>
     <body onload="init()">
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
         <!-- <script src="client.js"></script> -->
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container-fluid">
@@ -17,7 +22,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="rentals.html">Kölcsönzéseim</a>
                     </li>
-                    <li class="nav-item" id="nav-users" display="none">
+                    <li class="nav-item hidden" id="nav-users">
                         <a class="nav-link" href="users.html">Felhasználók</a>
                     </li>
                     <li class="nav-item"> 
@@ -55,7 +60,9 @@
                         <td>Sedan</td>
                         <td>8900 Ft</td>
                         <td>Igen</td>
-                        <td><button class="btn btn-primary">Megnézem</button></td>
+                        <td><a href="rent_car.html" class="btn btn-primary">Megnézem</a>
+                            <!-- <button class="btn btn-primary" id="rent-button-1" onclick="">Megnézem</button> -->
+                        </td>
                     </tr>
                 </div>         
             </table>
