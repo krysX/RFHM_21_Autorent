@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj": {}
+    "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj": {}
   },
   "projects": {
-    "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj": {
+    "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
+        "projectUniqueName": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
         "projectName": "AutorentServer",
-        "projectPath": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
+        "projectPath": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
         "packagesPath": "/home/siposk/.nuget/packages/",
-        "outputPath": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/",
+        "outputPath": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/home/siposk/.local/share/godot/mono/GodotNuGetFallbackFolder"
@@ -85,7 +85,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.2, 8.0.2]"
+              "version": "[8.0.5, 8.0.5]"
             }
           ],
           "frameworkReferences": {
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

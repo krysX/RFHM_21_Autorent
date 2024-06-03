@@ -17,5 +17,5 @@ async function login() {
     console.log(token);
 
     localStorage.setItem('token', token);
-    window.location.href = "/client.html"
+    window.location.href = "/cars.html"
 }

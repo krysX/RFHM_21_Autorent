@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SQF85+79PHoBV3mm+hYgfOdJ1N/KJt7EsR/ovC0mCr684Q0wEBY9dS6rIoDRDhL8xyCTMT3KOFKbpPeYlnaGIQ==",
+  "dgSpecHash": "4Hshr6RhE0bsCngTAZuaSg8qRNiRnOnHRCz6oUpdPUNgJx6ro2RwEMYU6EDwJma4Znwm1dUf4j2icxNYgv2toQ==",
   "success": true,
-  "projectFilePath": "/run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
+  "projectFilePath": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/AutorentServer.csproj",
   "expectedPackageFiles": [
     "/home/siposk/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/siposk/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.4/microsoft.aspnetcore.authentication.jwtbearer.8.0.4.nupkg.sha512",
@@ -64,7 +64,7 @@
     "/home/siposk/.nuget/packages/system.text.encodings.web/9.0.0-preview.3.24172.9/system.text.encodings.web.9.0.0-preview.3.24172.9.nupkg.sha512",
     "/home/siposk/.nuget/packages/system.text.json/9.0.0-preview.3.24172.9/system.text.json.9.0.0-preview.3.24172.9.nupkg.sha512",
     "/home/siposk/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
-    "/home/siposk/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.2/microsoft.aspnetcore.app.ref.8.0.2.nupkg.sha512"
+    "/home/siposk/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.5/microsoft.aspnetcore.app.ref.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }

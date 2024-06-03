@@ -2,32 +2,23 @@
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
         <meta charset="utf-8" lang="hu">
         <title>Autorent kliens</title>
     </head>
-
     <body onload="init()">
-        <style>
-            .hidden {
-                display: none;
-            }
-        </style>
-
-        <script src="scripts/api.js"></script>
-        <script src="scripts/cars.js"></script>
-
-        
+        <!-- <script src="client.js"></script> -->
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container-fluid">
                 <span class="navbar-brand">Autorent</span>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="cars.html">Autók</a>
+                        <a class="nav-link " href="cars.html">Autók</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="rentals.html">Kölcsönzéseim</a>
                     </li>
-                    <li class="nav-item hidden" id="nav-users">
+                    <li class="nav-item active" id="nav-users">
                         <a class="nav-link" href="users.html">Felhasználók</a>
                     </li>
                     <li class="nav-item"> 
@@ -39,36 +30,30 @@
         </nav>
 
         <div class="container mt-5">
-            <div class="dropdown">
-                <select name="category" class="form-select">
-                    <option>Összes autó (153)</option>
-                    <div id="cat-list">
-                    <option>Sedan (43)</option>
-                    <option>Hatchback (32)</option>
-                    <option>SUV (27)</option>
-                    </div>
-                </select>
-            </div>
+
+            <h2><span id="username-text">John Doe(john)</span> korábbi kölcsönzései</h2>
 
             <table class="table">
                 <th>
                     <td>Márka és típus</td>
                     <td>Kategória</td>
                     <td>Napi díj</td>
-                    <td>Kölcsönözhető</td>
-                    <td>Kölcsönsszési adatok</td>
+                    <td>Kezdő dátumm</td>
+                    <td>Végdátum</td>
+                    <td>Napok száma</td>
+                    <td>Összeg</td>
                 </th>
                 <div id="table-contents">
-                    <tr>
-                        <td></td>
-                        <td>Opel Corsa</td>
-                        <td>Sedan</td>
-                        <td>8900 Ft</td>
-                        <td>Igen</td>
-                        <td><a href="rent_car.html" class="btn btn-primary">Megnézem</a>
-                            <!-- <button class="btn btn-primary" id="rent-button-1" onclick="">Megnézem</button> -->
-                        </td>
-                    </tr>
+                <tr>
+                    <td></td>
+                    <td>Márka és típus</td>
+                    <td>Kategória</td>
+                    <td>Napi díj</td>
+                    <td>Kezdő dátum</td>
+                    <td>Végdátum</td>
+                    <td>Napok száma</td>
+                    <td>Összeg</td>
+                </tr>
                 </div>         
             </table>
         </div>
