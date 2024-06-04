@@ -6,7 +6,7 @@ namespace AutorentServer.Controllers;
 
 public class WebSocketController : ControllerBase
 {
-    [HttpGet("/ws")]
+    [HttpGet("/sales/ws")]
     public async Task Get()
     {
         if (HttpContext.WebSockets.IsWebSocketRequest)

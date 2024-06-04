@@ -56,48 +56,27 @@ public class UserController : ControllerBase
         JsonResult jsonResult = new JsonResult(token); 
         return Ok(jsonResult);
     }
-
+    
+    [Authorize(Roles = "Admin")]
     [HttpGet("{id}")]
     public ActionResult<User> GetUserDataById(int id)
     {
-        string uname = User.Identity.Name.ToString();
-        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(id).Name == uname);
-        if (!auth)
-            return Unauthorized();
-        
         var result = _repository.User.FindByCondition(usr => usr.Id == id);
         return null == result ? NotFound() : Ok(result);
     }
 
-    [HttpGet("me")]
-    public IActionResult GetCurrentUser()
-    {
-        string uname = User.Identity.Name.ToString();
-        User usr = _repository.User.FindByUsername(uname);
-        if (null == usr) return NotFound();
-        return new JsonResult(usr);
-    }
-
+    [Authorize(Roles = "Admin")]
     [HttpGet("{userId}/rentals")]
     public IActionResult GetRentalHistory(int userId)
     {
-        string uname = User.Identity.Name.ToString();
-        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(userId).Name == uname);
-        if (!auth)
-            return Unauthorized();
-        
         var result = _repository.Rental.FindByCondition(rent => rent.UserId == userId);
         return null == result ? NotFound() : Ok(result); 
     }
     
+    [Authorize(Roles = "Admin")]
     [HttpGet("{userId}/rentals/{rentalId}")]
     public IActionResult GetRental(int userId, int rentalId)
     {
-        string uname = User.Identity.Name.ToString();
-        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(userId).Name == uname);
-        if (!auth)
-            return Unauthorized();
-        
         var result = _repository.Rental.FindByCondition
             (rent => rent.UserId == userId && rent.Id == rentalId);
         return null == result ? NotFound() : Ok(result); 
@@ -107,7 +86,6 @@ public class UserController : ControllerBase
     [HttpPost("{userId}/rentals")]
     public IActionResult RentCar(int userId, int carId, string from, string to)
     {
-        
         Rental r = new Rental
         {
             Id = _repository.Rental.FindAll().OrderBy(r => r.Id).LastOrDefault().Id + 1,
@@ -122,4 +100,59 @@ public class UserController : ControllerBase
         _repository.Save();
         return Ok();
     }
+    
+    [HttpGet("me")]
+    public IActionResult GetCurrentUser()
+    {
+        string uname = User.Identity.Name.ToString();
+        User usr = _repository.User.FindByUsername(uname);
+        if (null == usr) return NotFound();
+        return new JsonResult(usr);
+    }
+    
+    [HttpGet("me/rentals")]
+    public IActionResult GetMyRentalHistory()
+    {
+        string uname = User.Identity.Name.ToString();
+        User usr = _repository.User.FindByUsername(uname) ?? new User {Id = -1};
+        
+        var result = _repository.Rental.FindByCondition(rent => rent.UserId == usr.Id);
+        return null == result ? NotFound() : Ok(result); 
+    }
+    
+    [HttpGet("me/rentals/{rentalId}")]
+    public IActionResult GetMyRental(int rentalId)
+    {
+        string uname = User.Identity.Name.ToString();
+        User usr = _repository.User.FindByUsername(uname) ?? new User {Id = -1};
+        
+        var result = _repository.Rental.FindByCondition
+            (rent => rent.UserId == usr.Id && rent.Id == rentalId);
+        return null == result ? NotFound() : Ok(result); 
+    }
+    
+    [HttpPost("me/rentals")]
+    public IActionResult RentCarForMe(int carId, string from, string to)
+    {
+        string uname = User.Identity.Name.ToString();
+        User usr = _repository.User.FindByUsername(uname);
+
+        if (null == usr)
+            return BadRequest();
+        
+        Rental r = new Rental
+        {
+            Id = _repository.Rental.FindAll().OrderBy(r => r.Id).LastOrDefault().Id + 1,
+            UserId = usr.Id,
+            CarId = carId,
+            FromDate = DateOnly.Parse(from),
+            ToDate = DateOnly.Parse(to),
+            Created = DateTime.Now
+        };
+
+        _repository.Rental.Create(r);
+        _repository.Save();
+        return Ok();
+    }
+    
 }
