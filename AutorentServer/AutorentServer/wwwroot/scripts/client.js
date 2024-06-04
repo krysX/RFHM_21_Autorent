@@ -78,6 +78,8 @@ function getEndpoint(method, endpoint) {
             switch (button.id) {
                 case 'car':
                     return '/cars';
+                case 'car5':
+                    return '/cars/5/month'
                 case 'cats':
                     return '/cars/categories'
                 case 'cat01':

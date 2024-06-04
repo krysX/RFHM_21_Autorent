@@ -103,13 +103,10 @@ public class UserController : ControllerBase
         return null == result ? NotFound() : Ok(result); 
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost("{userId}/rentals")]
     public IActionResult RentCar(int userId, int carId, string from, string to)
     {
-        string uname = User.Identity.Name.ToString();
-        bool auth = User.Identity.IsAuthenticated && (uname == "admin" || _repository.User.FindById(userId).Name == uname);
-        if (!auth)
-            return Unauthorized();
         
         Rental r = new Rental
         {

@@ -6,11 +6,12 @@
         <title>Autorent kliens</title>
     </head>
     <body onload="init()">
-        <script src="client.js"></script>
+        <script src="scripts/client.js"></script>
         <div class="container mt-5">
             <h2 class="mb-4">Üdv újra, <span id="username-text"></span>!</h2>
 
             <button type="button" id="car" class="btn btn-primary" onclick="sendRequest('GET')">Cars</button>
+            <button type="button" id="car5" class="btn btn-primary" onclick="sendRequest('GET')">Availability for Car 5</button>
             <button type="button" id="cats" class="btn btn-primary" onclick="sendRequest('GET')">Categories</button>
             <button type="button" id="cat01" class="btn btn-primary" onclick="sendRequest('GET')">SUVs</button>
             <button type="button" id="cat02" class="btn btn-primary" onclick="sendRequest('GET')">Sedans</button>

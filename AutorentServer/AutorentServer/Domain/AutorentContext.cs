@@ -68,18 +68,18 @@ public class AutorentContext : DbContext
         modelBuilder.Entity<Rental>().HasData(
             new Rental
             {
-                Id = 1, UserId = 1, CarId = 1, FromDate = DateOnly.Parse("2024-04-01"),
-                ToDate = DateOnly.Parse("2024-04-05"), Created = DateTime.Now
+                Id = 1, UserId = 1, CarId = 1, FromDate = DateOnly.Parse("2024-06-01"),
+                ToDate = DateOnly.Parse("2024-06-05"), Created = DateTime.Now
             },
             new Rental
             {
-                Id = 2, UserId = 2, CarId = 3, FromDate = DateOnly.Parse("2024-03-28"),
-                ToDate = DateOnly.Parse("2024-04-03"), Created = DateTime.Now
+                Id = 2, UserId = 2, CarId = 3, FromDate = DateOnly.Parse("2024-05-28"),
+                ToDate = DateOnly.Parse("2024-06-03"), Created = DateTime.Now
             },
             new Rental
             {
-                Id = 3, UserId = 3, CarId = 5, FromDate = DateOnly.Parse("2024-04-02"),
-                ToDate = DateOnly.Parse("2024-04-04"), Created = DateTime.Now
+                Id = 3, UserId = 3, CarId = 5, FromDate = DateOnly.Parse("2024-06-12"),
+                ToDate = DateOnly.Parse("2024-06-18"), Created = DateTime.Now
             }
         );
 

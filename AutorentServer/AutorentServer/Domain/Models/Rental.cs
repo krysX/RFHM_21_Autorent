@@ -25,3 +25,9 @@ public class RentalDto
     public DateOnly ToDate { get; set; }
     public int TotalPrice { get; set; }
 }
+
+public class RentalAvailabilityDto
+{
+    public DateOnly Date { get; set; }
+    public bool isAvailable { get; set; }
+}
