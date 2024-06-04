@@ -7,18 +7,77 @@
     <title>Login - Autorent</title>
 </head>
 <body>
-    <script src="login.js"></script>
     <div class="container mt-5">
         <h2 class="mb-4">Login</h2>
-        <div id="login-form"> 
+        <div id="login-form">
             <label for="username" class="form-label">Felhasználónév</label>
             <input type="text" class="form-control" id="username" name="username">
 
             <label for="password" class="form-label">Jelszó</label>
             <input type="password" class="form-control" id="password" name="password">
 
-            <button type="submit" class="btn btn-primary" value="Login" onclick="login()">Login</button>
-        </div>
+            <button type="submit" class="btn btn-primary" id="login-button">Login</button>
+        </div>async function login() {
+
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+
+        const response = await fetch(`/users/login`, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+        username: user,
+        password: pass
+        })
+        });
+
+        if (!response.ok) {
+        const errorData = await response.json();
+        alert("Belépés sikertelen! Próbálja meg újra.");
+        throw new Error(errorData.message);
+        }
+
+        const tokenData = await response.json();
+        const token = tokenData.value;
+        console.log(token);
+
+        localStorage.setItem('token', token);
+        window.location.href = "/cars.html";
+        }async function login() {
+
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+
+        const response = await fetch(`/users/login`, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+        username: user,
+        password: pass
+        })
+        });
+
+        if (!response.ok) {
+        const errorData = await response.json();
+        alert("Belépés sikertelen! Próbálja meg újra.");
+        throw new Error(errorData.message);
+        }
+
+        const tokenData = await response.json();
+        const token = tokenData.value;
+        console.log(token);
+
+        localStorage.setItem('token', token);
+        window.location.href = "/cars.html";
+        }
     </div>
+    <script src="scripts/login.js"></script>
+    <script>
+        document.getElementById("login-button").addEventListener("click", login);
+    </script>
 </body>
 </html>
