@@ -22,6 +22,8 @@ public class UserController : ControllerBase
     private readonly IRepositoryWrapper _repository;
     private readonly IAuthService _auth;
 
+    struct LoginResult { public string token; }
+    
     public UserController(ILogger<UserController> logger, IRepositoryWrapper repository, IAuthService auth)
     {
         _logger = logger;
@@ -37,17 +39,15 @@ public class UserController : ControllerBase
         return null == result ? NotFound() : Ok(result);
     }
 
-    struct LoginResult { public string token; }
-
     [AllowAnonymous]
-    [HttpGet("login")]
-    public IActionResult Login(string username, string password)
+    [HttpPost("login")]
+    public IActionResult Login(UserLoginDto input)
     {
-        User? usr = _repository.User.FindByUsername(username);
+        User? usr = _repository.User.FindByUsername(input.Username);
         if (null == usr)
             return Unauthorized();
 
-        bool passwordMatch = _auth.CheckForLogin(usr, username, password);
+        bool passwordMatch = _auth.CheckForLogin(usr, input.Username, input.Password);
 
         if (!passwordMatch)
             return Unauthorized();

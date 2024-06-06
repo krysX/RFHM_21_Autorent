@@ -7,6 +7,9 @@
     <title>Login - Autorent</title>
 </head>
 <body>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/login.js"></script>
+    
     <div class="container mt-5">
         <h2 class="mb-4">Login</h2>
         <div id="login-form">
@@ -16,68 +19,12 @@
             <label for="password" class="form-label">Jelszó</label>
             <input type="password" class="form-control" id="password" name="password">
 
-            <button type="submit" class="btn btn-primary" id="login-button">Login</button>
-        </div>async function login() {
-
-        const user = document.getElementById("username").value;
-        const pass = document.getElementById("password").value;
-
-        const response = await fetch(`/users/login`, {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-        username: user,
-        password: pass
-        })
-        });
-
-        if (!response.ok) {
-        const errorData = await response.json();
-        alert("Belépés sikertelen! Próbálja meg újra.");
-        throw new Error(errorData.message);
-        }
-
-        const tokenData = await response.json();
-        const token = tokenData.value;
-        console.log(token);
-
-        localStorage.setItem('token', token);
-        window.location.href = "/cars.html";
-        }async function login() {
-
-        const user = document.getElementById("username").value;
-        const pass = document.getElementById("password").value;
-
-        const response = await fetch(`/users/login`, {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-        username: user,
-        password: pass
-        })
-        });
-
-        if (!response.ok) {
-        const errorData = await response.json();
-        alert("Belépés sikertelen! Próbálja meg újra.");
-        throw new Error(errorData.message);
-        }
-
-        const tokenData = await response.json();
-        const token = tokenData.value;
-        console.log(token);
-
-        localStorage.setItem('token', token);
-        window.location.href = "/cars.html";
-        }
+            <button type="submit" class="btn btn-primary" id="login-button" onclick="newLogin()">Login</button>
+        </div>
     </div>
-    <script src="scripts/login.js"></script>
+    
     <script>
-        document.getElementById("login-button").addEventListener("click", login);
+        // document.getElementById("login-button").addEventListener("onclick", login);
     </script>
 </body>
 </html>

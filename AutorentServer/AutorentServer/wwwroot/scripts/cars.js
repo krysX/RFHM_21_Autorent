@@ -3,9 +3,11 @@
 
 function init() {
     getRequest("/cars")
-        .then(json => alert(json))
+        .then(json => alert(JSON.stringify(json)))
     
     // felhasználói adatok lekérése (név, username) (API hívás!)
+    const userData = getRequest('/users/me');
+    console.log(userData);
     // username-text beállítása
     // autó-kategóriák lekérése és beállítása (API hívás!) -> selectCategory()
     // autók lekérése és tábla feltöltése

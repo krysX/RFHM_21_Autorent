@@ -622,3 +622,11 @@ E:/Egyetemi projektek/05-11/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/D
 /run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/Debug/net8.0/AutorentServer.pdb
 /run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/Debug/net8.0/AutorentServer.genruntimeconfig.cache
 /run/media/siposk/Windows/VS Projects/05-14/RFHM_21_Autorent/AutorentServer/AutorentServer/obj/Debug/net8.0/ref/AutorentServer.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+C:/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
