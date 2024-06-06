@@ -1,30 +1,50 @@
 token = localStorage.getItem("token");
+alert(token);
 
 // fetchke
 async function getRequest(url, useAuth = true) {
 
     const options = {
         method: 'GET',
-        headers: !useAuth ? {} : {
-            'Authentication': 'Bearer ' + token
-        }
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: !useAuth ? {
+            'Content-Type': 'application/json; charset=UTF-8'
+        } : {
+            'Authentication': 'Bearer ' + token,
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer'
     }
     
     const response = await fetch(url, options);
 
-    // const json = await response.json();
-    // return json;
+    if(!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message);
+    }
+
+    const json = await response.json();
+    return json;
+    // return response;
 }
 
 async function postRequest(url, data, useAuth = true) {
     const options = {
         method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
         headers: !useAuth ? {
-            'Content-type': 'application/json; charset=UTF-8'
+            'Content-Type': 'application/json; charset=UTF-8'
         } : {
             'Authentication': 'Bearer ' + token,
             'Content-type': 'application/json; charset=UTF-8'
         },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
     }
 

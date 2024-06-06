@@ -2,8 +2,8 @@
 // const api = import('/api.js');
 
 function init() {
-    getRequest("/cars")
-        .then(json => alert(JSON.stringify(json)))
+    // getRequest("/cars")
+    //     .then(json => alert(JSON.stringify(json)))
     
     // felhasználói adatok lekérése (név, username) (API hívás!)
     const userData = getRequest('/users/me');

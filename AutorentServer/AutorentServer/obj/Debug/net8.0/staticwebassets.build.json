@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rxvyJfElev6dQxog5SjGsUw/q3ggGx89yHGS2l3OYPg=",
+  "Hash": "zVzlck6b+n/9iUBb0Zb+vjEkssutnF7akbPqfYr9+/w=",
   "Source": "AutorentServer",
   "BasePath": "_content/AutorentServer",
   "Mode": "Default",
@@ -34,25 +34,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/cars.html"
-    },
-    {
-      "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/client.html",
-      "SourceId": "AutorentServer",
-      "SourceType": "Discovered",
-      "ContentRoot": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
-      "BasePath": "_content/AutorentServer",
-      "RelativePath": "client.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/client.html"
     },
     {
       "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/index.html",
@@ -169,25 +150,6 @@
       "OriginalItemSpec": "wwwroot/scripts/cars.js"
     },
     {
-      "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/scripts/client.js",
-      "SourceId": "AutorentServer",
-      "SourceType": "Discovered",
-      "ContentRoot": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
-      "BasePath": "_content/AutorentServer",
-      "RelativePath": "scripts/client.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/scripts/client.js"
-    },
-    {
       "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/scripts/login.js",
       "SourceId": "AutorentServer",
       "SourceType": "Discovered",
@@ -226,6 +188,25 @@
       "OriginalItemSpec": "wwwroot/scripts/rent_car.js"
     },
     {
+      "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/scripts/test.js",
+      "SourceId": "AutorentServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
+      "BasePath": "_content/AutorentServer",
+      "RelativePath": "scripts/test.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/scripts/test.js"
+    },
+    {
       "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/styles.css",
       "SourceId": "AutorentServer",
       "SourceType": "Discovered",
@@ -243,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/styles.css"
+    },
+    {
+      "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/test.html",
+      "SourceId": "AutorentServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/",
+      "BasePath": "_content/AutorentServer",
+      "RelativePath": "test.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/test.html"
     },
     {
       "Identity": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/users_rentals.html",

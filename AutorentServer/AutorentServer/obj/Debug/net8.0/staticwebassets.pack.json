@@ -9,10 +9,6 @@
       "PackagePath": "staticwebassets/cars.html"
     },
     {
-      "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/client.html",
-      "PackagePath": "staticwebassets/client.html"
-    },
-    {
       "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
     },
@@ -33,10 +29,6 @@
       "PackagePath": "staticwebassets/scripts/cars.js"
     },
     {
-      "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/scripts/client.js",
-      "PackagePath": "staticwebassets/scripts/client.js"
-    },
-    {
       "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/scripts/login.js",
       "PackagePath": "staticwebassets/scripts/login.js"
     },
@@ -45,8 +37,16 @@
       "PackagePath": "staticwebassets/scripts/rent_car.js"
     },
     {
+      "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/scripts/test.js",
+      "PackagePath": "staticwebassets/scripts/test.js"
+    },
+    {
       "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/styles.css",
       "PackagePath": "staticwebassets/styles.css"
+    },
+    {
+      "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/test.html",
+      "PackagePath": "staticwebassets/test.html"
     },
     {
       "Id": "/run/media/siposk/Windows/VS Projects/RFHM_21_Autorent/AutorentServer/AutorentServer/wwwroot/users.html",
