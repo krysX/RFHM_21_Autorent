@@ -36,7 +36,7 @@ public class UserController : ControllerBase
     public IActionResult GetAllUsers()
     {
         var result = _repository.User.FindAll();
-        return null == result ? NotFound() : Ok(result);
+        return null == result ? NotFound() : new JsonResult(result);
     }
 
     [AllowAnonymous]
@@ -54,7 +54,7 @@ public class UserController : ControllerBase
 
         string token = _auth.GenerateJwtToken(usr.Username);
         JsonResult jsonResult = new JsonResult(token); 
-        return Ok(jsonResult);
+        return new JsonResult(jsonResult);
     }
     
     [Authorize(Roles = "Admin")]
@@ -62,7 +62,7 @@ public class UserController : ControllerBase
     public ActionResult<User> GetUserDataById(int id)
     {
         var result = _repository.User.FindByCondition(usr => usr.Id == id);
-        return null == result ? NotFound() : Ok(result);
+        return null == result ? NotFound() : new JsonResult(result);
     }
 
     [Authorize(Roles = "Admin")]
@@ -70,7 +70,7 @@ public class UserController : ControllerBase
     public IActionResult GetRentalHistory(int userId)
     {
         var result = _repository.Rental.FindByCondition(rent => rent.UserId == userId);
-        return null == result ? NotFound() : Ok(result); 
+        return null == result ? NotFound() : new JsonResult(result); 
     }
     
     [Authorize(Roles = "Admin")]
@@ -79,7 +79,7 @@ public class UserController : ControllerBase
     {
         var result = _repository.Rental.FindByCondition
             (rent => rent.UserId == userId && rent.Id == rentalId);
-        return null == result ? NotFound() : Ok(result); 
+        return null == result ? NotFound() : new JsonResult(result); 
     }
 
     [Authorize(Roles = "Admin")]
@@ -98,7 +98,7 @@ public class UserController : ControllerBase
 
         _repository.Rental.Create(r);
         _repository.Save();
-        return Ok();
+        return new JsonResult(r);
     }
     
     [HttpGet("me")]
@@ -117,7 +117,7 @@ public class UserController : ControllerBase
         User usr = _repository.User.FindByUsername(uname) ?? new User {Id = -1};
         
         var result = _repository.Rental.FindByCondition(rent => rent.UserId == usr.Id);
-        return null == result ? NotFound() : Ok(result); 
+        return null == result ? NotFound() : new JsonResult(result); 
     }
     
     [HttpGet("me/rentals/{rentalId}")]
@@ -128,7 +128,7 @@ public class UserController : ControllerBase
         
         var result = _repository.Rental.FindByCondition
             (rent => rent.UserId == usr.Id && rent.Id == rentalId);
-        return null == result ? NotFound() : Ok(result); 
+        return null == result ? NotFound() : new JsonResult(result); 
     }
     
     [HttpPost("me/rentals")]
@@ -152,7 +152,7 @@ public class UserController : ControllerBase
 
         _repository.Rental.Create(r);
         _repository.Save();
-        return Ok();
+        return new JsonResult(r);
     }
     
 }

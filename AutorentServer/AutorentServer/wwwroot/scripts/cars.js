@@ -1,6 +1,8 @@
 // let token = localStorage.getItem("token");
 // const api = import('/api.js');
 
+
+
 function init() {
     // getRequest("/cars")
     //     .then(json => alert(JSON.stringify(json)))
