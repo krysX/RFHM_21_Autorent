@@ -104,7 +104,6 @@ function getEndpoint(method) {
     }
 }
 
-//ne kelljen mindig újraírni a request küldő kódot
 function callToAPI() {
     const endpoint = getEndpoint('GET');
     const responseBox = document.getElementById('response-box');
